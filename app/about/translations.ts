@@ -1,4 +1,4 @@
-const translationKeys = [
+export const translationKeys = [
   "Our Mission",
   "Our Vision",
   "Our Values",
