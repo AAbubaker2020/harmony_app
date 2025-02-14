@@ -14,7 +14,7 @@ export const translationKeys = [
 
 export type TranslationKey = (typeof translationKeys)[number];
 
-export const translations: Record<"en" | "ar", Record<TranslationKey, string>> = {
+export const translations = {
   en: {
     "Our Mission": "Our Mission",
     "Our Vision": "Our Vision",
@@ -41,4 +41,5 @@ export const translations: Record<"en" | "ar", Record<TranslationKey, string>> =
     "Excellence": "التميز",
     "Collaboration": "التعاون",
   },
-};
+} as const; // Added 'as const'
+
