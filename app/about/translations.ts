@@ -1,34 +1,44 @@
-const translations = {
-    ourMission: {
-      en: "Our Mission",
-      ar: "مهمتنا",
-    },
-    ourVision: {
-      en: "Our Vision",
-      ar: "رؤيتنا",
-    },
-    ourValues: {
-      en: "Our Values",
-      ar: "قيمنا",
-    },
-    harmonyFounded: {
-      en: "Harmony Industrial Solutions was founded",
-      ar: "تأسست حلول هارموني الصناعية",
-    },
-    expandedOperations: {
-      en: "Expanded operations to 6 countries",
-      ar: "وسّعت عملياتها إلى 6 دول",
-    },
-    sustainabilityInitiative: {
-      en: "Launched sustainable industrial solutions initiative",
-      ar: "أطلقت مبادرة الحلول الصناعية المستدامة",
-    },
-    innovation: { en: "Innovation", ar: "الابتكار" },
-    sustainability: { en: "Sustainability", ar: "الاستدامة" },
-    integrity: { en: "Integrity", ar: "النزاهة" },
-    excellence: { en: "Excellence", ar: "التميّز" },
-    collaboration: { en: "Collaboration", ar: "التعاون" },
-  } as const; // This ensures TypeScript treats it as a readonly object
-  
-  export default translations;
-  
+const translationKeys = [
+  "Our Mission",
+  "Our Vision",
+  "Our Values",
+  "Harmony Industrial Solutions was founded",
+  "Expanded operations to 20 countries",
+  "Launched sustainable industrial solutions initiative",
+  "Innovation",
+  "Sustainability",
+  "Integrity",
+  "Excellence",
+  "Collaboration",
+] as const;
+
+export type TranslationKey = (typeof translationKeys)[number];
+
+export const translations: Record<"en" | "ar", Record<TranslationKey, string>> = {
+  en: {
+    "Our Mission": "Our Mission",
+    "Our Vision": "Our Vision",
+    "Our Values": "Our Values",
+    "Harmony Industrial Solutions was founded": "Harmony Industrial Solutions was founded",
+    "Expanded operations to 20 countries": "Expanded operations to 20 countries",
+    "Launched sustainable industrial solutions initiative": "Launched sustainable industrial solutions initiative",
+    "Innovation": "Innovation",
+    "Sustainability": "Sustainability",
+    "Integrity": "Integrity",
+    "Excellence": "Excellence",
+    "Collaboration": "Collaboration",
+  },
+  ar: {
+    "Our Mission": "مهمتنا",
+    "Our Vision": "رؤيتنا",
+    "Our Values": "قيمنا",
+    "Harmony Industrial Solutions was founded": "تأسست حلول هارموني الصناعية",
+    "Expanded operations to 20 countries": "توسعت العمليات إلى 20 دولة",
+    "Launched sustainable industrial solutions initiative": "أطلقت مبادرة الحلول الصناعية المستدامة",
+    "Innovation": "الابتكار",
+    "Sustainability": "الاستدامة",
+    "Integrity": "النزاهة",
+    "Excellence": "التميز",
+    "Collaboration": "التعاون",
+  },
+};
