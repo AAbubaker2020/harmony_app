@@ -87,7 +87,7 @@ const HeroSection = () => {
 
 
           <Link
-            href="/services"
+            href="/contact"
             className="premium-button px-8 py-3 rounded-full text-white font-medium flex items-center group bg-harmony-gold hover:bg-harmony-deep-gold transition-colors"
           >
             {language === "en" ? "Contact Us" : "اتصل بنا"}
