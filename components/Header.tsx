@@ -13,7 +13,7 @@ import { useState } from "react";
 const navItems = ["home", "about", "services", "contact"] as const;
 
 const Header = () => {
-  const { language, translations } = useLanguage();
+  const { translations } = useLanguage();
   const { isDarkMode, toggleDarkMode } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

@@ -67,6 +67,8 @@ export default function About() {
               <Image src="/value.png" alt="Our Values" layout="fill" objectFit="cover" />
             </div>
 
+            
+
             {/* List of Values */}
             <ul className="space-y-4">
               {translationKeys
@@ -85,6 +87,49 @@ export default function About() {
                 ))}
             </ul>
           </motion.div>
+
+          <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          <h2 className="text-3xl font-bold text-center mb-12 gradient-text text-shadow">
+            {language === "en" ? "Our Journey" : "رحلتنا"}
+          </h2>
+          <div className="relative h-64 mb-8 rounded-lg overflow-hidden">
+            <Image src="/Journey.png" alt="Our Journey" layout="fill" objectFit="cover" />
+          </div>
+          <div className="space-y-12">
+            {[
+              { year: "2014", event: "Harmony Industrial Solutions was founded" },
+              { year: "2021", event: "Expanded operations to 20 countries" },
+              { year: "2025", event: "Launched sustainable industrial solutions initiative" },
+            ].map((milestone, index) => (
+              <motion.div
+                key={milestone.year}
+                className="flex items-center"
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-1/4 text-right pr-4">
+                  <h3 className="text-xl font-bold gradient-text text-shadow">{milestone.year}</h3>
+                </div>
+                <div className="w-3/4 border-l-2 border-harmony-deep-bronze pl-4 pb-8">
+                  <p className="text-harmony-slate-gray">
+                  {language === "en"
+                    ? milestone.event
+                    : translations[language][milestone.event as TranslationKey]}
+
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+        
         </div>
       </div>
     </div>
